@@ -1,16 +1,31 @@
 "use strict";
 
-/* 
-console.log(document.querySelector(".message"));
-document.querySelector(".message").textContent = "🎉🎉 correct🥳";
+/* ===FUNCTIONALITY OF MODAL WINDOW=== */
+const modal = document.querySelector(".modal");
+const overlay = document.querySelector(".overlay");
+const btnCloseModal = document.querySelector(".close-modal");
+const btnOpenModal = document.querySelector(".instruction");
 
-document.querySelector(".number").textContent = 13;
-document.querySelector(".score").textContent = 10;
+const openModal = function () {
+  modal.classList.remove("hidden");
+  overlay.classList.remove("hidden");
+};
 
-console.log(document.querySelector(".guess").value);
-document.querySelector(".guess").value = 23;
-*/
+const closeModal = function () {
+  modal.classList.add("hidden");
+  overlay.classList.add("hidden");
+};
 
+btnOpenModal.addEventListener("click", openModal);
+btnCloseModal.addEventListener("click", closeModal);
+overlay.addEventListener("click", closeModal);
+document.addEventListener("keydown", function (e) {
+  if (e.key == "Escape" && !modal.classList.contains("hidden")) {
+    closeModal();
+  }
+});
+
+/* ===GAME FUNCTIONALITY=== */
 let secretNumber = Math.trunc(Math.random() * 24) + 1;
 let currentScore = 24;
 let highscore = 0;

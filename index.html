@@ -10,15 +10,32 @@
   </head>
   <body>
     <header>
-      <h1>Guess My Number!!</h1>
-      <p class="between">[between 1 and 24]</p>
-      <button class="btn again">again!!</button>
+      <h1 class="game-header">Guess My Number!!</h1>
+      <button class="btn instruction">instructions!</button>
+      <button class="btn again">again!</button>
       <div class="number">?</div>
     </header>
+
+    <!-- MODAL WINDOW -->
+    <div class="modal hidden">
+      <button class="close-modal">&times;</button>
+      <h1 class="modal-header">Instructions to Play 😅😅</h1>
+      <p class="modal-text">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+        mollit anim id est laborum.
+      </p>
+    </div>
+    <div class="overlay hidden"></div>
+
     <main>
       <section class="left">
         <input type="number" class="guess" />
-        <button class="btn check">check!!</button>
+        <button class="btn check">check!</button>
       </section>
       <section class="right">
         <p class="message">start guessing...</p>
